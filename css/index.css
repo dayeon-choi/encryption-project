@@ -1,41 +1,41 @@
 body {
-	background-color: #fff3d4;
+  background-color: #fff3d4;
 }
 
 /* 최상위 컨테이너 */
 #IndexPage {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 
-	display: flex;
+  display: flex;
 
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .MainLockContainer {
-	display: flex;
+  display: flex;
 }
 /* 자물쇠 이미지 */
 .MainLockImage {
-	max-width: 100%;
-	height: auto;
-	display: flex;
-	position: relative;
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
 }
 /* 버튼(메인 열쇠구멍) */
 .MainKeyhole {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 
-	display: flex;
-	position: absolute;
-	top: 80%;
-	left: 50%;
-	transform: translate(-50%, -80%);
+  text-align: center;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -70%);
 
-	background-color: #f6da46;
-	border: none;
-	outline: 0;
+  background-color: #f6da46;
+  border: none;
+  outline: 0;
 }
