@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+body {
+  background-color: #87b2cb;
+}
+
+#InputPage {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.MainInputContainer {
+  display: flex;
+}
+
+.KeyContainer,
+.KeyholeContainer {
+  display: flex;
+  margin-top: 1.8vh;
+  flex-direction: column;
+}
+
+.InputKeyContainer,
+.InputPlaintextContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.3vh;
+}
+.submitContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2.1vh;
+}
+
+.LabelKey,
+.LabelKeyhole {
+  color: #0a214bdc;
+  font-size: 1.2rem;
+  font-family: "Jua", sans-serif;
+}
+
+.InputKey,
+.InputPlaintext {
+  display: flex;
+  width: 50vw;
+  height: 6.5vh;
+  min-width: 500px;
+  margin-bottom: 15px;
+  display: flex;
+  padding-left: 15px;
+  border: 1px solid #bcbcbc;
+  border-radius: 8px;
+
+  outline: 0;
+
+  padding-top: 4px;
+  box-sizing: border-box;
+
+  font-size: 1.1rem;
+  font-weight: 100;
+  font-family: "Jua", sans-serif;
+}
+
+.InputKey::placeholder,
+.InputPlaintext::placeholder {
+  color: #436a8f81;
+  font-size: 1.1rem;
+  font-weight: 100;
+  font-family: "Jua", sans-serif;
+}
+
+.ImgInputKey,
+.ImgInputKeyhole {
+  width: auto;
+  height: 6.5vh;
+  display: flex;
+}
+
+.InputSubmit {
+  width: 50vw;
+  height: 5vh;
+  min-width: 500px;
+  margin-bottom: 50px;
+
+  border: none;
+  outline: 0;
+  background-color: #1d4e7c;
+  color: white;
+  border-radius: 8px;
+
+  font-weight: 500;
+  font-size: 1.2rem;
+  font-family: "Jua", sans-serif;
+
+  cursor: pointer;
+}
