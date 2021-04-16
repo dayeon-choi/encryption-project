@@ -35,7 +35,7 @@ body {
 .submitContainer {
   display: flex;
   flex-direction: row;
-  margin-top: 2.1vh;
+  margin-top: 3.5vh;
 }
 
 .LabelKey,
@@ -62,8 +62,9 @@ body {
   padding-top: 4px;
   box-sizing: border-box;
 
-  font-size: 1.1rem;
-  font-weight: 100;
+  color: #0a214b;
+  font-size: 1.2rem;
+  font-weight: 200;
   font-family: "Jua", sans-serif;
 }
 
@@ -85,7 +86,7 @@ body {
 
 .InputSubmit {
   width: 50vw;
-  height: 5vh;
+  height: 5.5vh;
   min-width: 500px;
   margin-bottom: 50px;
 
