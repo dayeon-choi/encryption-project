@@ -80,6 +80,7 @@ body {
   width: auto;
   height: 6.5vh;
   display: flex;
+  margin-left: 15px;
 }
 
 .InputSubmit {
