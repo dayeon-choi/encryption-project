@@ -15,8 +15,29 @@ body {
   align-items: center;
 }
 
+.WaveLockContainer {
+  display: flex;
+}
+
+.ImgWave {
+  display: flex;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 6.5vh;
+  margin-top: 1vh;
+}
+.ImgLock {
+  display: flex;
+  position: absolute;
+  height: 9vh;
+  margin-top: -6.8vh;
+  margin-left: 2vw;
+}
+
 .MainInputContainer {
   display: flex;
+  margin-top: 15vh;
 }
 
 .KeyContainer,
