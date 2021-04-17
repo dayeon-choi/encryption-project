@@ -14,26 +14,69 @@ body {
   align-items: center;
 }
 
+/*상단 키 & 키홀 이미지 컨테이너*/
+.KeyImgTopContainer {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+/*상단 키홀 01*/
+#TopKeyholeOne {
+  display: flex;
+  height: 10vh;
+  width: auto;
+  margin-top: 3vh;
+}
+
+#TopKeyOne {
+  display: flex;
+  height: 11vh;
+  width: auto;
+  margin-left: 13vw;
+}
+
+#TopKeyholeTwo {
+  display: flex;
+  height: 11vh;
+  width: auto;
+  margin-left: 28vw;
+}
+
+#TopKeyholethree {
+  display: flex;
+  height: 11vh;
+  width: auto;
+  margin-left: 8vw;
+  margin-top: 5vh;
+}
+
+/* 메인 자물쇠&구멍 컨테이너*/
 .MainLockContainer {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 /* 자물쇠 이미지 */
 .MainLockImage {
-  max-width: 100%;
-  height: auto;
+  width: auto;
+  height: 70vw;
+  max-height: 700px;
+
   display: flex;
   position: relative;
 }
+
 /* 버튼(메인 열쇠구멍) */
 .MainKeyhole {
-  max-width: 100%;
-  height: auto;
+  display: flex;
 
-  text-align: center;
+  width: auto;
+  height: 15vh;
+
   position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -70%);
+  margin-top: 36.5vh;
 
   background-color: #f6da46;
   border: none;
