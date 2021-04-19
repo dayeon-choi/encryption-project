@@ -26,14 +26,14 @@ body {
   display: flex;
   height: 10vh;
   width: auto;
-  margin-top: 3vh;
+  margin-top: 2vh;
 }
 
 #TopKeyOne {
   display: flex;
   height: 11vh;
   width: auto;
-  margin-left: 13vw;
+  margin-left: 20vw;
 }
 
 #TopKeyholeTwo {
@@ -47,8 +47,8 @@ body {
   display: flex;
   height: 11vh;
   width: auto;
-  margin-left: 8vw;
-  margin-top: 5vh;
+  margin-left: 15vw;
+  margin-top: 2vh;
 }
 
 /* Middle 총 컨테이너 (왼쪽 작은 이미지들, 메인 자물쇠, 오른쪽 작은 이미지들) */
@@ -64,6 +64,7 @@ body {
   flex-direction: column;
 }
 
+/*이미지들*/
 #LeftKeyholeOne {
   display: flex;
   height: auto;
@@ -73,21 +74,28 @@ body {
   display: flex;
   height: auto;
   width: 3.5vw;
+  margin-left: -23vw;
 }
 #LeftKeyOne {
   display: flex;
   height: auto;
   width: 7vw;
+  margin-left: -10vw;
+  margin-top: 6vh;
 }
 #LeftKeyholeThree {
   display: flex;
   height: auto;
   width: 4vw;
+  margin-left: -21vw;
+  margin-top: 6vh;
 }
 #LeftKeyTwo {
   display: flex;
   height: auto;
   width: 7vw;
+  margin-left: -5vw;
+  margin-top: 6vh;
 }
 
 /* 메인 자물쇠&구멍 컨테이너*/
@@ -131,5 +139,5 @@ body {
 /* Click the keyhole 텍스트 컨테이너 */
 .InfoTextContainer {
   display: flex;
-  margin-top: 3vh;
+  margin-top: 2vh;
 }
