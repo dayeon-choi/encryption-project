@@ -107,9 +107,9 @@ body {
 }
 
 .InputSubmit {
-  width: 50vw;
+  width: 25vw;
   height: 5.5vh;
-  min-width: 500px;
+  min-width: 250px;
   margin-bottom: 50px;
 
   border: none;
@@ -117,11 +117,18 @@ body {
   box-shadow: 0px 5px 1.5px -1.5px #0b2d4dea;
   background-color: #1d4e7c;
   color: white;
-  border-radius: 8px;
 
-  font-weight: 500;
+  font-weight: 498;
   font-size: 1.2rem;
   font-family: "Jua", sans-serif;
 
   cursor: pointer;
+}
+#en {
+  border-radius: 8px 0px 0px 8px;
+  margin-right: 1px;
+}
+#de {
+  border-radius: 0px 8px 8px 0px;
+  margin-left: 2px;
 }
