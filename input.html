@@ -27,7 +27,10 @@
                 <input
                   type="text"
                   class="InputKey"
-                  placeholder="영문자만 입력해주세요"
+                  placeholder="영문자, 공백만 입력해주세요"
+                  pattern="^[a-zA-Z\s]+$"
+                  name="inputedKey"
+                  onkeyup="getInput(this)"
                 />
                 <img src="img/inputkey.png" class="ImgInputKey" />
               </div>
@@ -41,18 +44,24 @@
                 <input
                   type="text"
                   class="InputPlaintext"
-                  placeholder="영문자만 입력해주세요"
+                  placeholder="영문자, 공백만 입력해주세요"
+                  pattern="^[a-zA-Z\s]+$"
+                  name="inputedPlain"
+                  onkeyup="getInput(this)"
                 />
                 <img src="img/inputkeyhole.png" class="ImgInputKeyhole" />
               </div>
             </div>
 
             <div class="submitContainer">
-              <button class="InputSubmit" type="submit">GO</button>
+              <button class="InputSubmit" type="submit" onclick="submitData()">
+                GO
+              </button>
             </div>
           </form>
         </article>
       </main>
     </div>
+    <script type="text/javascript" src="js/input.js"></script>
   </body>
 </html>
