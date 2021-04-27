@@ -38,7 +38,9 @@
 
             <div class="KeyholeContainer">
               <div class="LabelKeyholeContainer">
-                <label for="InputPlaintext" class="LabelKeyhole">평문</label>
+                <label for="InputPlaintext" class="LabelKeyhole"
+                  >평문 or 암호문</label
+                >
               </div>
               <div class="InputPlaintextContainer">
                 <input
@@ -46,7 +48,7 @@
                   class="InputPlaintext"
                   placeholder="영문자, 공백만 입력해주세요"
                   pattern="^[a-zA-Z\s]+$"
-                  name="inputedPlain"
+                  name="inputedStr"
                   onkeyup="getInput(this)"
                 />
                 <img src="img/inputkeyhole.png" class="ImgInputKeyhole" />
