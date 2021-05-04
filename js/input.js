@@ -2,10 +2,10 @@ const data = { inputedKey: "", inputedStr: "" };
 let alphabetBoard = createArray(5, 5);
 let addFlag = false;
 let zCheck = "";
-let encryptionStr = "";
+var encryptionStr = "";
 
 function createArray(rows, columns) {
-  var arr = new Array(rows);
+  let arr = new Array(rows);
   for (var i = 0; i < rows; i++) {
     arr[i] = new Array(columns);
   }
@@ -15,7 +15,6 @@ function createArray(rows, columns) {
 /* 입력 값 data에 */
 function getInput(e) {
   data[e.name] = e.value.toLowerCase();
-  console.log(data);
 }
 
 /* 암호화 버튼을 클릭했는지, 복호화 버튼을 입력했는지 판별 */
@@ -55,9 +54,9 @@ function submitData(whatIs) {
 
 /* 암호화 */
 function encryption(key, str) {
-  let playFair = new createArray();
-  let encPlayFair = new createArray();
-  let x = 0,
+  let playFair = [];
+  let encPlayFair = [];
+  let x1 = 0,
     x2 = 0,
     y1 = 0,
     y2 = 0;
@@ -66,34 +65,31 @@ function encryption(key, str) {
   for (let i = 0; i < str.length; i += 2) {
     let tmpArr = new Array(2);
     tmpArr[0] = str.charAt(i);
+    tmpArr[1] = str.charAt(i + 1);
 
-    if (i in tmpArr) {
+    if (tmpArr[1] === "") {
+      tmpArr[1] = "x";
+      oddFlag = true;
+      playFair.push(tmpArr);
+    } else {
       console.log(i in tmpArr, tmpArr);
-      if (str.charAt(i) == str.charAt(i + 1)) {
-        console.log(tmpArr);
+      if (str.charAt(i) === str.charAt(i + 1)) {
         tmpArr[1] = "x";
         i--;
       } else {
-        console.log(tmpArr);
         tmpArr[1] = str.charAt(i + 1);
       }
-    } else {
-      console.log(i in tmpArr, tmpArr);
-      tmpArr[1] = "x";
-      oddFlag = true;
-      console.log(tmpArr);
+      playFair.push(tmpArr);
     }
-
-    playFair.push(tmpArr);
-    console.log("음" + playFair);
+    console.log(playFair + " " + tmpArr);
   }
 
-  for (let i = 0; i < playFair.size; i++) {
-    console.log("음" + playFair[i][0] + "" + playFair[i][1] + " ");
+  for (let i = 0; i < playFair.length; i++) {
+    console.log(playFair[i][0] + playFair[i][1]);
   }
-  console.log();
 
-  for (let i = 0; i < playFair.size; i++) {
+  for (let i = 0; i < playFair.length; i++) {
+    let tmpArr = new Array(2);
     for (let j = 0; j < alphabetBoard.length; j++) {
       for (let k = 0; k < alphabetBoard.length; k++) {
         if (alphabetBoard[j][k] == playFair[i][0]) {
@@ -119,10 +115,12 @@ function encryption(key, str) {
       tmpArr[0] = alphabetBoard[x2][y1];
       tmpArr[1] = alphabetBoard[x1][y2];
     }
-    encPlayFair.add(tmpArr);
+    encPlayFair.push(tmpArr);
+    console.log(tmpArr);
   }
-  for (let i = 0; i < encPlayFair.size; i++) {
-    encStr += encPlayFair[i][0] + "" + encPlayFair[i][1] + " ";
+  for (let i = 0; i < encPlayFair.length; i++) {
+    //encStr += encPlayFair[i] + "" + encPlayFair[i] + " ";
+    encStr += String(encPlayFair[i][0]) + String(encPlayFair[i][1]);
   }
   return encStr;
 }
