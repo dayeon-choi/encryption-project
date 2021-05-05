@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Input</title>
     <link href="css/input.css" rel="stylesheet" type="text/css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <body>
     <div id="Container">
       <main id="InputPage">
@@ -19,7 +19,7 @@
         </article>
 
         <article class="MainInputContainer">
-          <form>
+          <form method="GET" name="forResult">
             <div class="KeyContainer">
               <div class="LabelKeyContainer">
                 <label for="InputKey" class="LabelKey">가상의 키</label>
@@ -31,6 +31,7 @@
                   placeholder="영문자, 공백만 입력해주세요"
                   pattern="^[a-zA-Z\s]+$"
                   name="inputedKey"
+                  id="key"
                   onkeyup="getInput(this)"
                 />
                 <img src="img/inputkey.png" class="ImgInputKey" />
@@ -50,6 +51,7 @@
                   placeholder="영문자, 공백만 입력해주세요"
                   pattern="^[a-zA-Z\s]+$"
                   name="inputedStr"
+                  id="str"
                   onkeyup="getInput(this)"
                 />
                 <img src="img/inputkeyhole.png" class="ImgInputKeyhole" />
@@ -61,7 +63,7 @@
                 class="InputSubmit"
                 id="en"
                 type="submit"
-                onclick="submitData('en')"
+                onclick="actionEn()"
               >
                 ENCRYPTION
               </button>
@@ -69,7 +71,7 @@
                 class="InputSubmit"
                 id="de"
                 type="submit"
-                onclick="submitData('de')"
+                onclick="actionDe()"
               >
                 DECRYPTION
               </button>
