@@ -6,6 +6,6 @@ function getInput(e) {
 }
 
 function actionEn() {
-  document.forResult.action = "resultEn.html";
+  document.forResult.action = "result.html";
   document.forResult.submit();
 }

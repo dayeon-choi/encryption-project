@@ -1,7 +1,8 @@
 let alphabetBoard = createArray(5, 5);
-let addFlag = false;
+let oddFlag = false;
 let zCheck = "";
 var encryptionStr = "";
+var decryptionStr = "";
 
 function createArray(rows, columns) {
   let arr = new Array(rows);
@@ -33,11 +34,18 @@ setKeyTextArea();
 
 let getStr = getParam("inputedStr");
 let str = "";
+let forStrContainer = "";
 for (let i = 0; i < getStr.length; i++) {
   str += getStr[i];
+  forStrContainer += getStr[i] + " ";
 }
 
-console.log(str);
+let StrContainer = document.querySelector(".StrContainer");
+StrContainer.innerHTML +=
+  "<div><input class='StrTextArea' type='text' value='" +
+  forStrContainer +
+  "' readonly='readonly'/>" +
+  "</div>";
 
 let blankCheck = "";
 let blankCheckCount = 0;
@@ -63,12 +71,123 @@ console.log(str);
 encryptionStr = encryption(key, str);
 console.log("암호화된 문자열:" + encryptionStr);
 
+function goDescryption() {
+  for (let i = 0; i < encryptionStr.length; i++) {
+    if (encryptionStr.charAt(i) == " ")
+      //공백제거
+      encryptionStr =
+        encryptionStr.substring(0, i) +
+        encryptionStr.substring(i + 1, encryptionStr.length);
+  }
+  decryptionStr = decryption(key, encryptionStr, zCheck);
+
+  for (let i = 0; i < decryptionStr.length; i++) {
+    if (blankCheck.charAt(i) == "1") {
+      decryptionStr =
+        decryptionStr.substring(0, i) +
+        " " +
+        decryptionStr.substring(i, decryptionStr.length);
+    }
+  }
+  let DeResultContainer = document.querySelector(".DeResultContainer");
+  DeResultContainer.innerHTML +=
+    "<input class='DeResultTextArea' type='text' value='" +
+    decryptionStr +
+    "' readonly='readonly'/>";
+}
+
 function setKeyTextArea() {
   let KeyContainer = document.querySelector(".KeyContainer");
   KeyContainer.innerHTML +=
     "<input class='keyTextArea' type='text' value='" +
     key +
     "' readonly='readonly'/>";
+}
+
+function decryption(key, str, zCheck) {
+  let playFair = [];
+  let decPlayFair = [];
+  let x1 = 0,
+    x2 = 0,
+    y1 = 0,
+    y2 = 0;
+  let decStr = "";
+  let lengthOddFlag = 1;
+
+  for (let i = 0; i < str.length; i += 2) {
+    let tmpArr = new Array(2);
+    tmpArr[0] = str.charAt(i);
+    tmpArr[1] = str.charAt(i + 1);
+    playFair.push(tmpArr);
+  }
+
+  for (let i = 0; i < playFair.length; i++) {
+    let tmpArr = new Array(2);
+    for (let j = 0; j < alphabetBoard.length; j++) {
+      for (let k = 0; k < alphabetBoard[j].length; k++) {
+        if (alphabetBoard[j][k] == playFair[i][0]) {
+          x1 = j;
+          y1 = k;
+        }
+        if (alphabetBoard[j][k] == playFair[i][1]) {
+          x2 = j;
+          y2 = k;
+        }
+      }
+    }
+
+    if (x1 == x2) {
+      //행이 같은 경우 각각 바로 아래열 대입
+      tmpArr[0] = alphabetBoard[x1][(y1 + 4) % 5];
+      tmpArr[1] = alphabetBoard[x2][(y2 + 4) % 5];
+    } else if (y1 == y2) {
+      //열이 같은 경우 각각 바로 옆 열 대입
+      tmpArr[0] = alphabetBoard[(x1 + 4) % 5][y1];
+      tmpArr[1] = alphabetBoard[(x2 + 4) % 5][y2];
+    } //행, 열 다른경우 각자 대각선에 있는 곳.
+    else {
+      tmpArr[0] = alphabetBoard[x2][y1];
+      tmpArr[1] = alphabetBoard[x1][y2];
+    }
+    decPlayFair.push(tmpArr);
+  }
+
+  /* 중복 문자열 돌려놓음 */
+  for (let i = 0; i < decPlayFair.length; i++) {
+    if (
+      i != decPlayFair.length - 1 &&
+      decPlayFair[i][1] == "x" &&
+      decPlayFair[i][0] == decPlayFair[i + 1][0]
+    ) {
+      decStr += decPlayFair[i][0];
+    } else {
+      decStr += decPlayFair[i][0] + "" + decPlayFair[i][1];
+    }
+  }
+
+  /* z->q */
+  for (let i = 0; i < zCheck.length; i++) {
+    if (zCheck.charAt(i) === "1") {
+      decStr =
+        decStr.substring(0, i) + "z" + decStr.substring(i + 1, decStr.length);
+    }
+  }
+
+  if (oddFlag) {
+    decStr = decStr.substring(0, decStr.length - 1);
+  }
+
+  for (let i = 0; i < decStr.length; i++) {
+    if (i % 2 == lengthOddFlag) {
+      decStr =
+        decStr.substring(0, i + 1) +
+        " " +
+        decStr.substring(i + 1, decStr.length);
+      i += 1;
+      lengthOddFlag = ++lengthOddFlag % 2;
+    }
+  }
+  return decStr;
 }
 
 /* 암호화 & 암호화 과정 출력*/
@@ -108,9 +227,9 @@ function encryption(key, str) {
   }
   let EnIngContainer = document.querySelector(".EnIngContainer");
   EnIngContainer.innerHTML +=
-    "<input class='EnIngTextArea' type='text' value='" +
+    "<div><input class='EnIngTextArea' type='text' value='" +
     String(eningValue) +
-    "' readonly='readonly'/>";
+    "' readonly='readonly'/></div>";
 
   for (let i = 0; i < playFair.length; i++) {
     let tmpArr = new Array(2);
@@ -151,7 +270,7 @@ function encryption(key, str) {
       String(encPlayFair[i][0]) + String(encPlayFair[i][1]) + " ";
   }
   let EnResultContainer = document.querySelector(".EnResultContainer");
-  EnIngContainer.innerHTML +=
+  EnResultContainer.innerHTML +=
     "<input class='EnResultTextArea' type='text' value='" +
     enResultValue +
     "' readonly='readonly'/>";
@@ -193,10 +312,19 @@ function setBoard(key) {
       if (j == 0) {
         resultBoard.innerHTML += "<div>";
       }
-      resultBoard.innerHTML +=
-        "<input class='boardTextArea' type='text' value='" +
-        alphabetBoard[i][j] +
-        "' readonly='readonly'/>";
+      if (alphabetBoard[i][j] == "q") {
+        resultBoard.innerHTML +=
+          "<input class='boardTextArea' type='text' value='" +
+          alphabetBoard[i][j] +
+          "/z" +
+          "' readonly='readonly'/>";
+      } else {
+        resultBoard.innerHTML +=
+          "<input class='boardTextArea' type='text' value='" +
+          alphabetBoard[i][j] +
+          "' readonly='readonly'/>";
+      }
+
       if ((j + 1) % 5 == 0) {
         resultBoard.innerHTML += "</div>";
       }

@@ -107,9 +107,9 @@ body {
 }
 
 .InputSubmit {
-  width: 25vw;
+  width: 50vw;
   height: 5.5vh;
-  min-width: 250px;
+  min-width: 500px;
   margin-bottom: 50px;
 
   border: none;
@@ -125,10 +125,5 @@ body {
   cursor: pointer;
 }
 #en {
-  border-radius: 8px 0px 0px 8px;
-  margin-right: 1px;
-}
-#de {
-  border-radius: 0px 8px 8px 0px;
-  margin-left: 2px;
+  border-radius: 8px 8px 8px 8px;
 }

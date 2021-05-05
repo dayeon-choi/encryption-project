@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+    <link href="css/result.css" rel="stylesheet" type="text/css" />
+  </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <body>
+    <article class="WaveLockContainer">
+      <div>
+        <img src="img/resultwaveYellow.png" class="ImgWave" />
+        <img src="img/inputLock.png" class="ImgLock" />
+      </div>
+    </article>
+    <main id="ResultPage">
+      <article class="BoardContainer">
+        <div class="LabelBoardContainer">
+          <label for="resultBoard" class="Label">암호판</label>
+        <div id="resultBoard"></div>
+      </article>
+      <div class="InputContainer">
+        <article class="KeyContainer">
+          <div class="LabelKeyContainer">
+            <label for="keyTextArea" class="Label">키</label>
+        </article>
+        <article class="StrContainer">
+          <div class="LabelStrContainer">
+            <label for="StrTextArea" class="Label">평문</label>
+        </article>
+        <article class="EnIngContainer">
+          <div class="LabelEnIngContainer">
+            <label for="EnIngTextArea" class="Label">매칭</label>
+        </article>
+        <article class="EnResultContainer">
+          <div class="LabelEnResultContainer">
+            <label for="EnResultTextArea" class="Label">암호문</label>
+        </article>
+        <article class="DeResultContainer">
+          <div class="LabelDeResultContainer">
+            <label for="DeResultTextArea" class="Label">복호문</label>
+        </article>
+        <article class="ButtonContainer">
+          <button class="DeButton" onclick="goDescryption()">DECRYPTION</button>
+
+          <button class="ReButton" onclick="location.href='input.html'">
+            RE
+          </button>
+        </article>
+      </div>
+    </main>
+
+    <script type="text/javascript" src="js/result.js"></script>
+  </body>
+</html>

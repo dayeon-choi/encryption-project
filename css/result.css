@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+body {
+  background-color: #febd80;
+}
+
+#ResultPage {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  margin-top: 5vh;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.InputContainer {
+  margin-left: 5vw;
+}
+
+.ImgWave {
+  display: flex;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 6.5vh;
+  margin-top: 1vh;
+}
+.ImgLock {
+  display: flex;
+  position: absolute;
+  height: 9vh;
+  margin-top: -6.8vh;
+  margin-left: 2vw;
+}
+
+.Label {
+  color: #ff9345;
+  font-size: 1.2rem;
+  font-family: "Jua", sans-serif;
+}
+
+.EnResultTextArea,
+.EnIngTextArea,
+.keyTextArea,
+.DeResultTextArea,
+.StrTextArea {
+  display: flex;
+  width: 15vw;
+  height: 6.5vh;
+  min-width: 230px;
+  margin-bottom: 15px;
+  display: flex;
+
+  padding-left: 15px;
+  border: none;
+  border-radius: 8px;
+  outline: 0;
+  box-shadow: 0px 5px 1.5px -1.5px #7531009f;
+
+  padding-top: 4px;
+  box-sizing: border-box;
+
+  color: #0a214b;
+  font-size: 1.2rem;
+  font-weight: 200;
+  font-family: "Jua", sans-serif;
+}
+
+.boardTextArea {
+  width: 7vw;
+  height: 10vh;
+  text-align: center;
+  margin-right: 1.3vw;
+  margin-bottom: 2vw;
+  border: none;
+  border-radius: 8px 8px 8px 8px;
+  font-family: "Jua", sans-serif;
+  font-size: 1rem;
+}
+
+.DeButton,
+.ReButton {
+  width: 10vw;
+  height: 3.5vh;
+  min-width: 100px;
+
+  border: none;
+  outline: 0;
+  box-shadow: 0px 5px 1.5px -1.5px #753100;
+  background-color: #ff9345;
+  color: #753100;
+
+  font-weight: 498;
+  font-size: 1rem;
+  font-family: "Jua", sans-serif;
+
+  cursor: pointer;
+  border-radius: 8px 8px 8px 8px;
+}
